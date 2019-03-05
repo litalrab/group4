@@ -157,11 +157,11 @@
         }
         function prevPic(params) {
 
-            var nextIndexPic = imagesArr.indexOf(getLargePic()) - 1<0 ? imagesArr.indexOf(getLargePic()) + 1:0 ;
+            var prevIndexPic = imagesArr.indexOf(getLargePic()) - 1 >0 ? imagesArr.indexOf(getLargePic()) - 1:0 ;
 
-            setLargePic(imagesArr[nextIndexPic]);
-            console.log(nextIndexPic);
-            document.getElementById("largeImg").src = imagesArr[nextIndexPic]
+            setLargePic(imagesArr[prevIndexPic]);
+            console.log(prevIndexPic);
+            document.getElementById("largeImg").src = imagesArr[prevIndexPic]
 
         }
     </script>
