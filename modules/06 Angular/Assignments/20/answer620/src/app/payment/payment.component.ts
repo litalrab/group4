@@ -2,27 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-reactive-form',
-  templateUrl: './reactive-form.component.html',
-  styleUrls: ['./reactive-form.component.css']
+  selector: 'app-payment',
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.css']
 })
-export class ReactiveFormComponent {
+export class PaymentComponent  {
   f: FormGroup;
   constructor(builder: FormBuilder) {
     this.f = builder.group({
       // username
-      username: builder.group({
-        firstname: [
-          "Shai"
+    
+      CardNumber: [
+          "Shai", [
+            Validators.required//,
+           
+           // this.myvalidator
+          ]
         ],
-        lastname: [
+        cardname: [
+          "Mesisterano", [
+            Validators.required
+          ]
+        ],
+        ExpiryDate: [
+          "Mesisterano", [
+            Validators.required
+          ]
+        ],
+        SecurityCode: [
           "Mesisterano", [
             Validators.required,
-            Validators.minLength(2),
-            this.myvalidator
+            Validators.maxLength(3)
           ]
         ]
-      })
+     
     })
   }
 
@@ -39,5 +52,4 @@ export class ReactiveFormComponent {
     console.log('f', this.f);
     console.log('f.get.lastname', this.f.get('username').get('lastname'));
   }
-
 }

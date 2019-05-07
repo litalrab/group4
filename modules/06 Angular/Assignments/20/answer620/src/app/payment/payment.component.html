@@ -1,0 +1,30 @@
+<form [formGroup]="f" (submit)="onSubmit()">
+ 
+  <label for="CardNumber"> Card Number:</label>
+  <input id="CardNumber"  formControlName="CardNumber">
+
+      <label for="cardname"> Card name:</label>
+      <input id="cardname"  formControlName="cardname">
+      <label for="ExpiryDate"> Expiry Date:</label>
+      <input id="ExpiryDate"  formControlName="ExpiryDate">
+      <label for="SecurityCode"> Security Code:</label>
+      <input id="SecurityCode"  formControlName="SecurityCode">
+   
+  <!-- //  </div> -->
+  
+    <!-- <div *ngIf="f.invalid && (f.dirty || f.touched)">
+      <div *ngIf="f.get('username').get('lastname').errors.minlength">
+        Minimum 2 characters
+      </div>
+      <div *ngIf="f.get('username').get('lastname').errors.required">
+        Please fill Last Name
+      </div>
+    </div>
+    <div *ngIf="f.invalid && f.dirty">
+      <div *ngIf="f.get('username').get('lastname').errors.containsB">
+        Last Name must contain the character "B"
+      </div>
+    </div> -->
+  
+    <button>Submit</button>
+  </form>
