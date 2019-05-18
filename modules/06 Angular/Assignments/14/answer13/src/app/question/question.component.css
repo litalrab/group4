@@ -1,0 +1,11 @@
+#nextQ , #prevQ ,#submit{
+    width: 20%;
+    height: 30px;
+    background-color: brown;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: 0.3s all;
+    cursor: pointer;
+    color: #fff;
+}
