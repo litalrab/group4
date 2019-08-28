@@ -74,7 +74,10 @@ function checkTemp(temp) {
 
 }
 function getTodaysTempInTelAviv() {
-  fetch('http://api.apixu.com/v1/current.json?key=dda6e762ae4f41efb7e173552192204&q=tel%20aviv')
+   const KEY=`dda6e762ae4f41efb7e173552192204`;
+   const CITY=`tel%20aviv`;  
+  const url=`http://api.apixu.com/v1/current.json?key=${{KEY}}&q=${{CITY}}`;
+  fetch(url)
     .then(function (response) {
       return response.json();
     })
