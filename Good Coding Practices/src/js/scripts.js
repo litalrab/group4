@@ -35,10 +35,6 @@ function handleClick(ev) {
   piece.moveDelta(parseInt(this.dataset.dx), parseInt(this.dataset.dy));
 }
 
-function getElementByID(id) {
-  return document.getElementById(id);
-}
-
 function dataSetX(btn, newPosition) {
   btn.dataset.dx = newPosition;
 
@@ -122,23 +118,21 @@ function reset() {
   setLeft(LEFT_SIZE);
 }
 
+fuction setBtn(id,xPosition,yPosition)
+{
+   const $btn = document.getElementById(id);
+  dataSetX($btn, xPosition);
+  dataSetY($btn, yPosition);
+  addclickEventListener($btn); 
+  
+}
+
 function init() {
-  const $btnUp = getElementByID("btn-up");
-  dataSetX($btnUp, 0);
-  dataSetY($btnUp, -100);
-  addclickEventListener($btnUp);
-  const $btnRight = getElementByID("btn-right");
-  dataSetX($btnRight, 100);
-  dataSetY($btnRight, 0);
-  addclickEventListener($btnRight);
-  const $btnDown = getElementByID("btn-down");
-  dataSetX($btnDown, 0);
-  dataSetY($btnDown, 100);
-  addclickEventListener($btnDown);
-  const $btnLeft = getElementByID("btn-left");
-  dataSetX($btnLeft, -100);
-  dataSetY($btnLeft, 0);
-  addclickEventListener($btnLeft);
+  setBtn("btn-up",0,-100);
+  setBtn("btn-right", 100,0);
+  setBtn("btn-down",0,100);
+  setBtn("btn-left",-100,0);
+
 }
 
 window.addEventListener("DOMContentLoaded", event => {
