@@ -44,10 +44,6 @@ function dataSetY(btn, newPosition) {
   btn.dataset.dy = newPosition;
 
 }
-function addclickEventListener(btn) {
-  const CLICK_EVENT = "click";
-  btn.addEventListener(CLICK_EVENT, handleClick);
-}
 
 function setTop(newPosition) {
   
@@ -124,7 +120,8 @@ function setBtn(id,xPosition,yPosition)
   dataSetX($btn, xPosition);
   dataSetY($btn, yPosition);
   addclickEventListener($btn); 
-  
+   $btn.addEventListener("click", handleClick);
+
 }
 
 function init() {
