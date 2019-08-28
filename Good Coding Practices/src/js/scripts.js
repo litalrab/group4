@@ -69,10 +69,10 @@ function checkTemperature(temperature) {
     case temperature < 10:
       changePieceColor("blue");
       break;
-    case temperature > 11 && temp < 20:
+    case temperature > 11 && temperature < 20:
       changePieceColor("Green");
       break;
-    case temperature > 21 && temp < 30:
+    case temperature > 21 && temperature < 30:
       changePieceColor("Yellow");
       break;
     default:
