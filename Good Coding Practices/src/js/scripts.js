@@ -118,7 +118,7 @@ function reset() {
   setLeft(LEFT_SIZE);
 }
 
-fuction setBtn(id,xPosition,yPosition)
+function setBtn(id,xPosition,yPosition)
 {
    const $btn = document.getElementById(id);
   dataSetX($btn, xPosition);
