@@ -50,11 +50,11 @@ function dataSetY(btn, newPosition) {
 
 function setTop(newPosition) {
   
-  document.getElementById("piece").style.top = newPosition;
+  document.getElementById("piece").style.top = `${newPosition}px`;
 }
 
 function setLeft(newPosition) {
-  document.getElementById("piece").style.left = newPosition;
+  document.getElementById("piece").style.left = `${newPosition}%`;
 
 }
 
@@ -96,16 +96,16 @@ function getTodaysTempInTelAviv() {
 
 function Randomize() {
   const MAX_RANDOM_NUMBER = 100;
-  let randomTop=Math.floor(Math.random() * MAX_RANDOM_NUMBER) + 1 ; // returns a random integer from 1 to 100
-  let randomLeft=Math.floor(Math.random() * MAX_RANDOM_NUMBER) + 1; // returns a random integer from 1 to 100
+  let randomTopPosition=Math.floor(Math.random() * MAX_RANDOM_NUMBER) + 1 ; 
+  let randomLeftPosition=Math.floor(Math.random() * MAX_RANDOM_NUMBER) + 1; // returns a random integer from 1 to 100
   
-  if(isValidHeight(randomTop))
+  if(isValidHeight(randomTopPosition))
   {
-    setTop(randomTop+ "px"); 
+    setTop(randomTopPosition); 
   }
-  if(isValidHeight(randomTop))
+  if(isValidHeight(randomLeftPosition))
   {
-    setLeft( randomLeft+ "%");
+    setLeft(randomLeftPosition);
   }
 }
 
