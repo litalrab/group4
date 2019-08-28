@@ -8,11 +8,14 @@ const piece = (function () {
   
   const moveDelta = function (dx, dy) {
     const pos = this.el.getBoundingClientRect();
-    if (isValidWidth(pos.left + dx)) {
-      this.el.style.left = `${pos.left + dx}px`;
+    const NEW_X_POSITION=pos.left + dx;
+    const NEW_Y_POSITION=pos.top + dy;
+    
+    if (isValidWidth(NEW_X_POSITION)) {
+      this.el.style.left = `${NEW_X_POSITION}px`;
     }
-    if (isValidHeight(pos.top + dy)) {
-      this.el.style.top = `${pos.top + dy}px`;
+    if (isValidHeight(NEW_Y_POSITION)) {
+      this.el.style.top = `${NEW_Y_POSITION}px`;
     }
   };
   return {
