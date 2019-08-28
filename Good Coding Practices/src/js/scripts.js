@@ -1,9 +1,11 @@
 // piece object
 const piece = (function () {
   let el = null;
+ 
   const init = function (el) {
     this.el = el;
   };
+  
   const moveDelta = function (dx, dy) {
     const pos = this.el.getBoundingClientRect();
     if (isValidWidth(pos.left + dx)) {
@@ -18,24 +20,30 @@ const piece = (function () {
     moveDelta
   };
 })();
+
 function isValidWidth(pos) {
   return pos > 0 && pos < screen.width - 90;
 
 }
+
 function isValidHeight(pos) {
   return pos > -1 && pos < screen.height - 190;
 
 }
+
 function handleClick(ev) {
   piece.moveDelta(parseInt(this.dataset.dx), parseInt(this.dataset.dy));
 }
+
 function getElementByID(id) {
   return document.getElementById(id);
 }
+
 function dataSetX(btn, newPosition) {
   btn.dataset.dx = newPosition;
 
 }
+
 function dataSetY(btn, newPosition) {
   btn.dataset.dy = newPosition;
 
@@ -44,48 +52,53 @@ function addclickEventListener(btn) {
   const CLICK_EVENT = "click";
   btn.addEventListener(CLICK_EVENT, handleClick);
 }
+
 function setTop(newPosition) {
   
   document.getElementById("piece").style.top = newPosition;
 }
+
 function setLeft(newPosition) {
   document.getElementById("piece").style.left = newPosition;
 
 }
+
 function changePieceColor(color) {
 
   document.getElementById("piece").style.background = color;
 }
-function checkTemp(temp) {
+
+function checkTemperature(temperature) {
   switch (true) {
-    case temp < 10:
+    case temperature < 10:
       changePieceColor("blue");
       break;
-    case temp > 11 && temp < 20:
+    case temperature > 11 && temp < 20:
       changePieceColor("Green");
       break;
-    case temp > 21 && temp < 30:
+    case temperature > 21 && temp < 30:
       changePieceColor("Yellow");
       break;
     default:
       changePieceColor("Red");
       break;
   }
-
 }
+
 function getTodaysTempInTelAviv() {
    const KEY=`dda6e762ae4f41efb7e173552192204`;
    const CITY=`tel%20aviv`;  
-  const url=`http://api.apixu.com/v1/current.json?key=${{KEY}}&q=${{CITY}}`;
+  const URL=`http://api.apixu.com/v1/current.json?key=${KEY}&q=${CITY}`;
   fetch(url)
     .then(function (response) {
       return response.json();
     })
     .then(function (myJson) {
       console.log(JSON.stringify(myJson.current.temp_c));
-      checkTemp(JSON.stringify(myJson.current.temp_c))
+      checkTemperature(JSON.stringify(myJson.current.temp_c))
     });
 }
+
 function Randomize() {
   let randomTop=Math.floor(Math.random() * 100) + 1 ; // returns a random integer from 1 to 100
   let randomLeft=Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100
@@ -99,6 +112,7 @@ function Randomize() {
     setLeft( randomLeft+ "%");
   }
 }
+
 function reset() {
   setTop("100px");
   setLeft("50%");
