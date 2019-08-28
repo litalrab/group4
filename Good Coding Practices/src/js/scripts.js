@@ -100,8 +100,9 @@ function getTodaysTempInTelAviv() {
 }
 
 function Randomize() {
-  let randomTop=Math.floor(Math.random() * 100) + 1 ; // returns a random integer from 1 to 100
-  let randomLeft=Math.floor(Math.random() * 100) + 1; // returns a random integer from 1 to 100
+  const MAX_RANDOM_NUMBER = 100;
+  let randomTop=Math.floor(Math.random() * MAX_RANDOM_NUMBER) + 1 ; // returns a random integer from 1 to 100
+  let randomLeft=Math.floor(Math.random() * MAX_RANDOM_NUMBER) + 1; // returns a random integer from 1 to 100
   
   if(isValidHeight(randomTop))
   {
@@ -114,8 +115,11 @@ function Randomize() {
 }
 
 function reset() {
-  setTop("100px");
-  setLeft("50%");
+  const TOP_SIZE = "100px";
+  const LEFT_SIZE = "50%";
+  
+  setTop(TOP_SIZE);
+  setLeft(LEFT_SIZE);
 }
 
 function init() {
